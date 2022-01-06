@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <form class="create-category" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
+                    <mat-error class="alert alert-primary">{{status}}</mat-error>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Name Category:</mat-label>
+                        <input matInput name="name" [(ngModel)]="form.name" #name="ngModel" required>
+                        <mat-icon color="accent" matSuffix>category</mat-icon>
+                    </mat-form-field><br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Birth Day</mat-label>
+                        <input matInput [matDatepicker]="picker" name="birthDay" [(ngModel)]="form.birthDay" #birthDay="ngModel" required >
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field><br>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Gender</mat-label>
+                        <input matInput name="gender" [(ngModel)]="form.gender" #gender="ngModel" required>
+                        <mat-icon color="accent" matSuffix>gender</mat-icon>
+                    </mat-form-field><br>
+                    <app-upload-avatar (giveURLtoCreate)="onUploadAvatar($event)"></app-upload-avatar>
+                    <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Create Category</button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

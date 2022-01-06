@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <div  *ngIf="student">
+                    <h2>Student Detail</h2>
+                    <i style="color: #4CAF50">{{student.name}}</i><br>
+                    <i style="color: #4CAF50">{{student.gender}}</i><br>
+                    <i style="color: #4CAF50">{{student.birthDay}}</i><br>
+                    <img [src]="student.avatar">
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

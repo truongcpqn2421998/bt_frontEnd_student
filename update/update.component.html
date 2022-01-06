@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <form class="edit-category" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Name: </mat-label>
+                        <input matInput name="name" [(ngModel)]="student.name" #name="ngModel" required>
+                    </mat-form-field><br>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Gender: </mat-label>
+                        <input matInput name="gender" [(ngModel)]="student.gender" #gender="ngModel" required>
+                    </mat-form-field><br>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" name="birthDay" [(ngModel)]="student.birthDay" #birthDay="ngModel">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field><br>
+                    <app-upload-avatar (giveURLtoCreate)="changeAvatar($event)"></app-upload-avatar>
+                    <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Update Category
+                        <mat-icon color="accent" matSuffix>category</mat-icon>
+                    </button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>
