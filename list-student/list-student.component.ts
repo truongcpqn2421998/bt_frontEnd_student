@@ -43,7 +43,6 @@ export class ListStudentComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('ressult sau khi bam nut --> ', result);
       if (result) {
         this.deleteCategory(id);
       }
